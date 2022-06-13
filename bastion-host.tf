@@ -13,13 +13,13 @@ resource "aws_instance" "vprofile-bastion" {
 
   provisioner "file" {
     content     = templatefile("templates/db-deploy.tmpl", { rds-endpoint = aws_db_instance.vprofile-rds.address, dbuser = var.dbuser, dbpass = var.dbpass })
-    destination = "/tmp/vprofile-dbdeploy.sh"
+    destination = "/tmp/db-deploy.sh"
   }
 
   provisioner "remote-exec" {
     inline = [
-      "chmod +x /tmp/vprofile-dbdeploy.sh",
-      "sudo /tmp/vprofile-dbdeploy.sh"
+      "chmod +x /tmp/db-deploy.sh",
+      "sudo /tmp/db-deploy.sh"
     ]
   }
 

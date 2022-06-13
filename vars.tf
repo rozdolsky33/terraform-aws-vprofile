@@ -31,7 +31,7 @@ variable "rmquser" {
 }
 
 variable "rmqpass" {
-  default = "Gr33@pple122254321"
+  default = "GroupMan9password"
 }
 
 variable "dbname" {
@@ -43,7 +43,7 @@ variable "dbuser" {
 }
 
 variable "dbpass" {
-  default = "admin@123456"
+  default = "admin123456"
 }
 
 variable "instance_count" {
